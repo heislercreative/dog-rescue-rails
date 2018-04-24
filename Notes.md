@@ -9,6 +9,10 @@ Models
     has_many Events
     has_many Tasks through Events
   Dog
+    - name
+    - age
+    - potty/crate trained
+    - adoption fee
     belongs_to user (shelter or adopter)
     belongs_to Breed
   Breed
