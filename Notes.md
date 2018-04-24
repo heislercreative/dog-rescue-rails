@@ -10,6 +10,9 @@ Models
     has_many Tasks through Events
   Dog
     belongs_to user (shelter or adopter)
+    belongs_to Breed
+  Breed
+    has_many Dogs
   Event
     belongs_to User
     has_many Tasks
