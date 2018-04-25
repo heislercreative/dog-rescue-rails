@@ -2,9 +2,8 @@ Dog Rescue
 
 Models
   User
-    - shelter
-    - volunteers
-    - adopters
+    - shelter (admin)
+    - volunteers/adopters
     has_many Dogs
     has_many Events
     has_many Tasks through Events
