@@ -5,8 +5,8 @@ Models
     - shelter (admin)
     - volunteers/adopters
     [x] has_many Dogs
-    has_many Events
-    has_many Tasks through Events
+    [x] has_many Events
+    [x] has_many Tasks through Events
   Dog
     - name
     - age (in years)
@@ -18,7 +18,7 @@ Models
   Breed
     [x] has_many Dogs
   Event
-    belongs_to User
-    has_many Tasks
+    [x] belongs_to User
+    [x] has_many Tasks
   Task
-    belongs_to Dog
+    [x] belongs_to Event
