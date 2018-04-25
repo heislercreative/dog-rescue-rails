@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_04_25_033957) do
   create_table "dogs", force: :cascade do |t|
     t.string "name"
     t.decimal "age"
-    t.boolean "gender"
+    t.string "gender"
     t.boolean "trained"
     t.integer "fee"
     t.integer "breed_id"

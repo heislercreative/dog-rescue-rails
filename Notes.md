@@ -10,7 +10,7 @@ Models
   Dog
     - name
     - age (in years)
-    - gender (T: male, F: female)
+    - gender (M or F - will need custom validator)
     - potty/crate trained
     - adoption fee
     [x] belongs_to user (shelter or adopter)
@@ -19,7 +19,3 @@ Models
     [x] has_many Dogs
   Event
     [x] has_many Users through User_Events
-
-
-4/24 -- User, Dog, & Breed models working. Events can't be saved without user_id, and tasks can't be saved without event_id.
-  - Should users belong to events? Or should events work as the join table for users and tasks?
