@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 2018_04_25_033957) do
     t.datetime "datetime"
   end
 
-  create_table "tasks", force: :cascade do |t|
-    t.string "name"
+  create_table "user_events", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "event_id"
   end
 

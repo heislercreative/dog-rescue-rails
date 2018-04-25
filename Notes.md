@@ -6,7 +6,7 @@ Models
     - volunteers/adopters
     [x] has_many Dogs
     [x] has_many Events
-    [x] has_many Tasks through Events
+    [x] has_many Events through User_Events
   Dog
     - name
     - age (in years)
@@ -18,10 +18,7 @@ Models
   Breed
     [x] has_many Dogs
   Event
-    [x] belongs_to User
-    [x] has_many Tasks
-  Task
-    [x] belongs_to Event
+    [x] has_many Users through User_Events
 
 
 4/24 -- User, Dog, & Breed models working. Events can't be saved without user_id, and tasks can't be saved without event_id.
