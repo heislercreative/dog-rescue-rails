@@ -10,7 +10,8 @@ Models
     has_many Tasks through Events
   Dog
     - name
-    - age
+    - age (in years)
+    - gender (T: male, F: female)
     - potty/crate trained
     - adoption fee
     belongs_to user (shelter or adopter)
