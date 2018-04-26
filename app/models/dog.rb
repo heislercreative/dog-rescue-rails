@@ -6,7 +6,7 @@ class Dog < ActiveRecord::Base
   validate :gender_set?
 
   def gender_set?
-    self.gender == 'm' || self.gender == 'f'
+    errors.add(:gender, "must be male or female") unless self.gender == 'm' || self.gender == 'f'
   end
 
 end
