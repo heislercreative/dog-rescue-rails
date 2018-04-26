@@ -5,8 +5,4 @@ class User < ActiveRecord::Base
 
   has_secure_password
   validates_presence_of :name, :email, :admin
-
-  def password_needed?
-    
-  end
 end
