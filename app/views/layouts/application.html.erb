@@ -7,9 +7,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <ul class="nav navbar-nav navbar-left">
+      <h1>Dog Rescue Shelter</h1>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <br>
+        <!-- Logic for log out button will go here. -->
+      </ul>
+
+      <br><br><br><hr>
+
+      <%= yield %>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
