@@ -7,7 +7,7 @@
         <h4><%= dog.name %></h4>
         <p><em><%= dog.breed.name %></em></p>
         <p><%= dog.gender %> - <%= dog.age %> years old</p>
-        <p>Potty & Crate Trained: <%= dog.trained %></p>
+        <p><%= is_trained?(dog) %></p>
       </div>
     </td>
   <% end %>
