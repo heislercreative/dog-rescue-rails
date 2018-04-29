@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+ tbody {
+     display: table-row-group;
+     vertical-align: middle;
+ }
+
+ .list-item {
+     width: auto;
+     text-align: center;
+     vertical-align: top;
+ }
+
+ .list-dog-info-block {
+     display: table;
+     width: 200px;
+     margin-top: 0px;
+     margin-right: auto;
+     margin-bottom: 12px;
+     margin-left: auto;
+ }

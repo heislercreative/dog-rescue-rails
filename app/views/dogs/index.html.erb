@@ -1,1 +1,14 @@
-Some Text
+<h3>Available Dogs to Adopt</h3>
+
+<tbody>
+  <% @dogs.each do |dog| %>
+    <td class="list-item">
+      <div class="list-dog-info-block">
+        <h4><%= dog.name %></h4>
+        <p><em><%= dog.breed.name %></em></p>
+        <p><%= dog.gender %> - <%= dog.age %> years old</p>
+        <p>Potty & Crate Trained: <%= dog.trained %></p>
+      </div>
+    </td>
+  <% end %>
+</tbody>
