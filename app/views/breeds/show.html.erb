@@ -1,17 +1,7 @@
 <h3><%= @breed.name %>s</h3>
 
-<tbody>
-  <% @dogs.each do |dog| %>
-    <td class="list-item">
-      <tr>
-        <div class="list-dog-info-block">
-          <hr>
-          <h4><%= link_to dog.name, dog %></h4>
-          <p><em><%= link_to dog.breed.name, dog.breed %></em></p>
-          <p><%= dog.gender %> - <%= dog.age %> years old</p>
-          <p><%= is_trained?(dog) %></p>
-        </div>
-      </tr>
-    </td>
-  <% end %>
-</tbody>
+<%= render '/dogs/dog_list' %>
+
+<br>
+
+<%= link_to 'Return to All Dogs', dogs_path %>

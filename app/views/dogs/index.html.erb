@@ -1,17 +1,3 @@
 <h3>Dogs Available for Adoption</h3>
 
-<tbody>
-  <% @dogs.each do |dog| %>
-    <td class="list-item">
-      <tr>
-        <div class="list-dog-info-block">
-          <hr>
-          <h4><%= link_to dog.name, dog %></h4>
-          <p><em><%= link_to dog.breed.name, dog.breed %></em></p>
-          <p><%= dog.gender %> - <%= dog.age %> years old</p>
-          <p><%= is_trained?(dog) %></p>
-        </div>
-      </tr>
-    </td>
-  <% end %>
-</tbody>
+<%= render 'dog_list' %>
