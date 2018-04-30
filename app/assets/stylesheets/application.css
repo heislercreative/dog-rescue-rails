@@ -14,11 +14,12 @@
  *= require_self
  */
 
-h3 {
+.main-content {
   margin-left: 30px;
+  margin-right: 30px;
 }
 
-/* tbody, .list-item, and .list-dog-info-block formatting based on National Mill Dog Rescue website */
+/* tbody, .list-item, and .dog-info formatting based on National Mill Dog Rescue website */
 
  tbody {
      display: table-row-group;
@@ -31,11 +32,10 @@ h3 {
      vertical-align: top;
  }
 
- .list-dog-info-block {
+ .dog-info {
      display: table;
      width: 200px;
      margin-top: 0px;
      margin-right: auto;
      margin-bottom: 12px;
-     margin-left: 40px;
  }
