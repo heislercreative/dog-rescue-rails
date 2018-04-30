@@ -1,7 +1,7 @@
 class DogsController < ApplicationController
 
   def index
-    @dogs = Dog.all
+    @dogs = User.shelter_admin.dogs
   end
 
 end

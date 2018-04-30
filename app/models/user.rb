@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
   validates_presence_of :name, :email, :admin
+
+  def self.shelter_admin
+    User.find(1)
+  end
 end
