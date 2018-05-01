@@ -25,7 +25,7 @@
   <%= f.label :breed %>:
   <%= f.text_field :breed_name, list: "breeds_autocomplete" %>
     <datalist id="breeds_autocomplete">
-      <% @breeds.each do |breed| %>
+      <% @breeds.sort_by{|b| b.name}.each do |breed| %>
         <option value="<%= breed.name %>">
       <% end %>
     </datalist>
