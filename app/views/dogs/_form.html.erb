@@ -1,0 +1,44 @@
+<% if @dog.errors.any? %>
+  <div class="alert alert-warning" role="alert">
+    <ul>
+    <% @dog.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @dog do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :breed_name %>
+  <%= f.text_field :breed_name, list: "breeds_autocomplete" %>
+    <datalist id="breeds_autocomplete">
+      <% @breeds.sort_by{|b| b.name}.each do |breed| %>
+        <option value="<%= breed.name %>">
+      <% end %>
+    </datalist><br>
+
+  <%= f.label :gender %>
+  <%= f.radio_button :gender, 'Male' %> M
+  <%= f.radio_button :gender, 'Female'%> F <br>
+
+  <%= f.label :age %>
+  <%= f.number_field :age %> (years old) <br>
+
+  <%= f.label 'Potty & Crate Trained' %>
+  <%= f.radio_button :trained, true %> Yes
+  <%= f.radio_button :trained, false %> No <br>
+
+  <%= f.label :fee %>
+  $ <%= f.number_field :fee %><br>
+
+  <%= f.label :description %><br>
+  <%= f.text_area :description %><br><br>
+
+  <%= f.hidden_field :user_id %>
+
+  <%= f.submit %>
+
+<% end %>
