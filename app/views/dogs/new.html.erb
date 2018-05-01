@@ -17,7 +17,7 @@
   <%= f.label :name %>
   <%= f.text_field :name %><br>
 
-  <%= f.label :breed %>
+  <%= f.label :breed_name %>
   <%= f.text_field :breed_name, list: "breeds_autocomplete" %>
     <datalist id="breeds_autocomplete">
       <% @breeds.sort_by{|b| b.name}.each do |breed| %>
@@ -37,7 +37,7 @@
   <%= f.radio_button :trained, true %> Yes
   <%= f.radio_button :trained, false %> No <br>
 
-  <%= f.label 'Adoption fee' %>
+  <%= f.label :fee %>
   $ <%= f.number_field :fee %><br>
 
   <%= f.label :description %><br>

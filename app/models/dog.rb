@@ -2,7 +2,7 @@ class Dog < ActiveRecord::Base
   belongs_to :user
   belongs_to :breed
 
-  validates_presence_of :name, :age, :fee, :description
+  validates_presence_of :name, :breed_name, :age, :fee, :description
   validate :gender_set?
 
   def gender_set?
