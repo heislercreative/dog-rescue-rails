@@ -39,3 +39,9 @@
      margin-right: auto;
      margin-bottom: 12px;
  }
+
+ .dog-description {
+   max-width: 600px;
+   margin-right: auto;
+   margin-bottom: 20px;
+ }
