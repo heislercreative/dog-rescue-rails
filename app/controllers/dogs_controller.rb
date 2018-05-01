@@ -1,9 +1,10 @@
 class DogsController < ApplicationController
+  before_action :get_breeds, only: [:new, :create, :edit, :update]
+
 
   def new
     @user = User.shelter_admin
     @dog = @user.dogs.build
-    @breeds = Breed.all
   end
 
   def create
@@ -12,7 +13,6 @@ class DogsController < ApplicationController
     if @dog.save
       redirect_to dog_path(@dog)
     else
-      @breeds = Breed.all
       render :new
     end
   end
@@ -29,6 +29,10 @@ class DogsController < ApplicationController
 
   def dog_params
     params.require(:dog).permit(:name, :breed_name, :gender, :age, :trained, :fee, :description, :user_id)
+  end
+
+  def get_breeds
+    @breeds = Breed.all
   end
 
 end
