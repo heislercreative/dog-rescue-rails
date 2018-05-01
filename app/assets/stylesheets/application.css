@@ -21,27 +21,27 @@
 
 /* tbody, .list-item, and .dog-info formatting based on National Mill Dog Rescue website */
 
- tbody {
-     display: table-row-group;
-     vertical-align: middle;
- }
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
 
- .list-item {
-     width: auto;
-     text-align: center;
-     vertical-align: top;
- }
+.list-item {
+  width: auto;
+  text-align: center;
+  vertical-align: top;
+}
 
- .dog-info {
-     display: table;
-     width: 200px;
-     margin-top: 0px;
-     margin-right: auto;
-     margin-bottom: 12px;
- }
+.dog-info {
+  display: table;
+  width: 200px;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 12px;
+}
 
- .dog-description {
-   max-width: 600px;
-   margin-right: auto;
-   margin-bottom: 20px;
- }
+.dog-description {
+  max-width: 600px;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
