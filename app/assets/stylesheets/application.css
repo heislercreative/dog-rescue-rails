@@ -46,6 +46,23 @@ tbody {
   margin-bottom: 35px;
 }
 
+#dog_breed_name {
+  width: 200px;
+}
+
+#dog_age {
+  width: 60px;
+}
+
+#dog_fee {
+  width: 60px;
+}
+
+textarea {
+  width: 400px;
+  height: 200px;
+}
+
 /* Displaying Errors */
 .field_with_errors {
   display: inline-grid;
