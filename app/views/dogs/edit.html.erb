@@ -1,4 +1,4 @@
-<h3>Add a Dog for Adoption</h3><br>
+<h3>Edit Dog Information</h3><br>
 
 <% if @dog.errors.any? %>
   <div class="alert alert-warning" role="alert">
@@ -41,6 +41,6 @@
 
   <%= f.hidden_field :user_id %>
 
-  <%= f.submit 'Add Dog' %>
+  <%= f.submit %>
 
 <% end %>

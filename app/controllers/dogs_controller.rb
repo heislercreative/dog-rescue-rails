@@ -1,6 +1,14 @@
 class DogsController < ApplicationController
   before_action :get_breeds, only: [:new, :create, :edit, :update]
 
+  def index
+    @dogs = User.shelter_admin.dogs
+  end
+
+  def show
+    @dog = Dog.find(params[:id])
+  end
+
 
   def new
     @user = User.shelter_admin
@@ -9,7 +17,6 @@ class DogsController < ApplicationController
 
   def create
     @dog = Dog.new(dog_params)
-
     if @dog.save
       redirect_to dog_path(@dog)
     else
@@ -17,12 +24,19 @@ class DogsController < ApplicationController
     end
   end
 
-  def index
-    @dogs = User.shelter_admin.dogs
+  def edit
+    @user = User.shelter_admin
+    @dog = Dog.find(params[:id])
   end
 
-  def show
+  def update
     @dog = Dog.find(params[:id])
+    @dog.update(dog_params)
+    if @dog.save
+      redirect_to dog_path(@dog)
+    else
+      render :edit
+    end
   end
 
   private
