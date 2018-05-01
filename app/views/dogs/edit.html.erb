@@ -1,3 +1,9 @@
 <h3>Edit Dog Information</h3><br>
 
 <%= render 'form' %>
+
+<hr>
+
+<%= form_tag dog_path(@dog.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@dog.name}" %>
+<% end %>

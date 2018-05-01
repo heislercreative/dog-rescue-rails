@@ -9,7 +9,6 @@ class DogsController < ApplicationController
     @dog = Dog.find(params[:id])
   end
 
-
   def new
     @user = User.shelter_admin
     @dog = @user.dogs.build
@@ -37,6 +36,11 @@ class DogsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    Dog.find(params[:id]).destroy
+    redirect_to dogs_path
   end
 
   private
