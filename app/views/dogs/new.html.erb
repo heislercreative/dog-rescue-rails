@@ -1,3 +1,19 @@
+<% if @dog.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@dog.errors.count, "error") %>
+      prohibited this dog from being saved:
+    </h2>
+
+    <ul>
+    <% @dog.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <h3>Add a Dog for Adoption</h3>
 
 <br>
@@ -31,6 +47,8 @@
 
   <%= f.label :description %>:<br>
   <%= f.text_area :description %><br><br>
+
+  <%= f.hidden_field :user_id %>
 
   <%= f.submit 'Add Dog' %>
 

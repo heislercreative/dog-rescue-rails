@@ -7,8 +7,14 @@ class DogsController < ApplicationController
   end
 
   def create
-    Dog.create(dog_params)
-    redirect_to dogs_path
+    @dog = Dog.new(dog_params)
+
+    if @dog.save
+      redirect_to dog_path(@dog)
+    else
+      @breeds = Breed.all
+      render :new
+    end
   end
 
   def index
@@ -22,7 +28,7 @@ class DogsController < ApplicationController
   private
 
   def dog_params
-    params.require(:dog).permit(:name, :breed_name, :gender, :age, :trained, :fee, :description)
+    params.require(:dog).permit(:name, :breed_name, :gender, :age, :trained, :fee, :description, :user_id)
   end
 
 end
