@@ -14,7 +14,7 @@ class Dog < ActiveRecord::Base
   end
 
   def breed_name
-    self.breed.name
+    self.breed.name if self.breed
   end
 
 end

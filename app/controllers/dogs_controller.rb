@@ -7,8 +7,8 @@ class DogsController < ApplicationController
   end
 
   def create
-    raise params.inspect
     Dog.create(dog_params)
+    redirect_to dogs_path
   end
 
   def index
