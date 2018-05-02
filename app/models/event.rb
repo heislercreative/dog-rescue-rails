@@ -5,4 +5,9 @@ class Event < ActiveRecord::Base
   validates_presence_of :title, :description, :datetime
   validates :title, length: { maximum: 40 }
   validates :description, length: { minimum: 40 }
+
+  def organizer
+    User.find(self.organizer_id).name
+  end
+
 end
