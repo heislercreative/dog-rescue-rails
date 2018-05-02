@@ -1,0 +1,14 @@
+<h3>Edit Breed Name</h3><br>
+
+<%= form_for @breed do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+
+  <%= f.submit class: "btn btn-warning" %>
+<% end %>
+
+<hr>
+
+<%= form_tag breed_path(@breed), method: "delete" do %>
+  <%= submit_tag "Delete #{@breed.name}", class: "btn btn-danger", data: { confirm: "Are you sure you want to delete the breed #{@breed.name}?"} %>
+<% end %>

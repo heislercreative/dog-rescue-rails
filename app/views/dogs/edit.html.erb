@@ -4,6 +4,6 @@
 
 <hr>
 
-<%= form_tag dog_path(@dog.id), method: "delete" do %>
-  <%= submit_tag "Remove #{@dog.name}", class: "btn btn-danger", data: { confirm: "Are you sure you want to remove #{@dog.name}?"} %>
+<%= form_tag dog_path(@dog), method: "delete" do %>
+  <%= submit_tag "Delete #{@dog.name}", class: "btn btn-danger", data: { confirm: "Are you sure you want to delete #{@dog.name}?"} %>
 <% end %>
