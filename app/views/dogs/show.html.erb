@@ -13,13 +13,11 @@
   <p><%= @dog.description %></p>
 </div>
 
-
+<!-- If current_user is admin display edit -->
 <%= link_to "Edit #{@dog.name}'s Details", edit_dog_path(@dog), class: "btn btn-warning" %>
 
-<!-- Adopt @dog.name -->
+<!-- else dipslay Adopt -->
 <button type="button" class="btn btn-primary">Adopt <%= @dog.name %></button>
-
-
 
 <br><br><br>
 
