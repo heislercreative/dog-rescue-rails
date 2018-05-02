@@ -45,7 +45,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:dog).permit(:name, :breed_name, :gender, :age, :trained, :fee, :description, :user_id)
+    params.require(:dog).permit(:name, :description, :datetime, :organizer_id)
   end
 
 end
