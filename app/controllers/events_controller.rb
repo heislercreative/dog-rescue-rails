@@ -1,7 +1,11 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.where("date >= ?", Date.current)
+  end
+
+  def past
+    @events = Event.where("date < ?", Date.current)
   end
 
   def show
