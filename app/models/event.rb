@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
   end
 
   def attendees
-    self.users.map { |user| user.name }
+    self.users.sort_by{|e| e.name}.map{|e| e.name}
   end
 
 end

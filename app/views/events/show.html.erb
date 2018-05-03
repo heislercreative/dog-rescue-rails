@@ -15,9 +15,21 @@
 <!-- If current_user is admin display edit -->
 <%= link_to "Edit Event", edit_user_event_path(@event), class: "btn btn-warning" %>
 
-<!-- else dipslay Adopt -->
+<!-- else dipslay Attend -->
 <button type="button" class="btn btn-primary">Attend Event</button>
 
-<br><br><br>
+<br><br>
+
+<div class="description">
+  <h4>Attendees (<%= @event.attendees.count %>)</h4>
+  <ul>
+    <% @event.attendees.each do |event| %>
+      <li><%= event%></li>
+    <% end %>
+  </ul>
+  <p></p>
+</div>
+
+<br>
 
 <strong><%= link_to 'Return to Events', events_path %></strong>
