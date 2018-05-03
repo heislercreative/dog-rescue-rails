@@ -10,4 +10,8 @@ class Event < ActiveRecord::Base
     User.find(self.organizer_id).name
   end
 
+  def attendees
+    self.users.map { |user| user.name }
+  end
+
 end
