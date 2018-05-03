@@ -1,0 +1,23 @@
+<h3><%= @event.title %></h3>
+
+<br>
+<div class="info">
+  <h4><%= @event.date.strftime('%B %-d, %Y') %></h4>
+  <h5><%= @event.start_time.strftime('%l:%M %p') %> - <%= @event.end_time.strftime('%l:%M %p') %></h5><br>
+  <h5><strong>Organizer:</strong> <%= @event.organizer %></h5>
+</div>
+<br>
+<div class="description">
+  <h4>About the Event:</h4>
+  <p><%= @event.description %></p>
+</div>
+
+<!-- If current_user is admin display edit -->
+<%= link_to "Edit Event", edit_user_event_path(@event), class: "btn btn-warning" %>
+
+<!-- else dipslay Adopt -->
+<button type="button" class="btn btn-primary">Attend Event</button>
+
+<br><br><br>
+
+<strong><%= link_to 'Return to Events', events_path %></strong>

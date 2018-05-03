@@ -32,7 +32,7 @@ tbody {
   vertical-align: top;
 }
 
-.dog-info {
+.info {
   display: table;
   width: 200px;
   margin-top: 0px;
@@ -40,7 +40,7 @@ tbody {
   margin-bottom: 12px;
 }
 
-.dog-description {
+.description {
   max-width: 600px;
   margin-right: auto;
   margin-bottom: 35px;
