@@ -19,3 +19,8 @@ Models
     [x] has_many Dogs
   Event
     [x] has_many Users through User_Events
+
+
+  ToDo (once User model & login set up)
+    [] 'Adopt' button (form)
+    [] 'Attend' button (form)
