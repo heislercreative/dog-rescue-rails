@@ -10,7 +10,7 @@ class EventsController < ApplicationController
 
   def new
     @user = User.find_by(id: params[:user_id])
-    @event = @user.events.build
+    @event = @user.events.build(organizer_id: @user.id)
   end
 
   def create
@@ -45,7 +45,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:dog).permit(:name, :description, :datetime, :organizer_id)
+    params.require(:event).permit(:title, :description, :datetime, :organizer_id)
   end
 
 end

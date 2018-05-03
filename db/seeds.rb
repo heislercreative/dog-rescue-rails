@@ -14,4 +14,4 @@ admin_user.dogs.create([
   {name: 'Skye', age: 8, gender: 'Female', trained: false, fee: 175, description: 'Quiet, gentle, and loving.', breed_id: 2}
 ])
 
-Event.create(title: 'Cleanup Day', description: "Bring your least favorite clothes. We can promise it's going to be messy. Trust us.", datetime: DateTime.now, organizer_id: 1)
+# Event.create(title: 'Cleanup Day', description: "Bring your least favorite clothes. We can promise it's going to be messy. Trust us.", date: , start_time: , end_time: , organizer_id: 1)
