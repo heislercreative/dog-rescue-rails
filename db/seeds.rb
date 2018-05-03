@@ -14,7 +14,9 @@ admin_user.dogs.create([
   {name: 'Skye', age: 8, gender: 'Female', trained: false, fee: 175, description: 'Quiet, gentle, and loving.', breed_id: 2}
 ])
 
-Event.create(title: 'Cleanup Day', description: "Bring your least favorite clothes. We can promise it's going to be messy. Trust us.", date: "2018-05-04 00:0
-0:00", start_time: "2018-05-04 13:0
-0:00", end_time: "2018-05-04 15:3
-0:00", organizer_id: 1)
+Event.create(
+  title: 'Cleanup Day', description: "Bring your least favorite clothes. We can promise it's going to be messy. Trust us.", date: "2018-05-04 00:00:00", start_time: "2018-05-04 13:00:00", end_time: "2018-05-04 15:30:00", organizer_id: 1
+)
+Event.create(
+  title: 'Preparing for Y2K', description: "Help us stock up on canned goods and apocalypse food buckets. One can never be too prepared.", date: "1999-12-30 00:00:00", start_time: "1999-12-30 12:00:00", end_time: "1999-12-30 16:00:00", organizer_id: 1
+)
