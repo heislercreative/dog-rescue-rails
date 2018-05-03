@@ -5,5 +5,5 @@
 <hr>
 
 <%= form_tag user_event_path(@event), method: "delete" do %>
-  <%= submit_tag "Delete #{@event.name}", class: "btn btn-danger", data: { confirm: "Are you sure you want to delete #{@event.name}?"} %>
+  <%= submit_tag "Delete Event", class: "btn btn-danger", data: { confirm: "Are you sure you want to delete #{@event.title}?"} %>
 <% end %>

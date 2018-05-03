@@ -2,7 +2,7 @@
   <% @dogs.each do |dog| %>
     <td class="list-item">
       <tr>
-        <div class="list-dog-info-block">
+        <div class="info">
           <hr>
           <h4><%= link_to dog.name, dog %></h4>
           <p><em><%= link_to dog.breed.name, dog.breed %></em></p>

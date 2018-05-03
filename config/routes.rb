@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :dogs
   resources :users do
-    resources :events, only: [:new, :edit, :delete]
+    resources :events, only: [:new, :edit, :destroy]
   end
   resources :events, only: [:index, :show, :create, :update]
   resources :breeds, only: [:show, :edit, :update, :destroy]
