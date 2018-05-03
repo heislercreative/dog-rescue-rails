@@ -1,4 +1,13 @@
+<% if flash[:notice] %>
+  <div class="alert alert-warning" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <h3><%= @breed.name %>s</h3>
+
+<!-- If current_user is admin display edit -->
+<%= link_to "Edit Breed", edit_breed_path(@breed)%>
 
 <%= render '/dogs/dog_list' %>
 
