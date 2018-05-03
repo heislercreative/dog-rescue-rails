@@ -21,7 +21,7 @@
 
   <%= f.label 'Potty & Crate Trained' %>
   <%= f.radio_button :trained, true %> Yes
-  <%= f.radio_button :trained, false %> No <br>
+  <%= f.radio_button :trained, false, checked: true %> No <br>
 
   <%= f.label :fee %>
   $ <%= f.number_field :fee %><br>
