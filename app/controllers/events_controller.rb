@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 
   def new
     @user = User.find_by(id: params[:user_id])
-    @event = @user.events.build(organizer_id: @user.id)
+    @event = Event.new(organizer_id: @user.id)
   end
 
   def create
