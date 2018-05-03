@@ -1,12 +1,4 @@
-<% if @dog.errors.any? %>
-  <div class="alert alert-warning" role="alert">
-    <ul>
-    <% @dog.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render 'errors' %>
 
 <%= form_for @dog do |f| %>
   <%= f.label :name %>
