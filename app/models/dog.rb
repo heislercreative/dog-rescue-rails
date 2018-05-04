@@ -10,7 +10,7 @@ class Dog < ActiveRecord::Base
   end
 
   def breed_name=(name)
-    self.breed = Breed.find_or_create_by(name: name)
+    self.breed = Breed.find_or_create_by(name: name.titelize)
   end
 
   def breed_name
