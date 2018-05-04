@@ -66,6 +66,14 @@ textarea {
 .btn.btn-default.sm-btn {
   height: 25px;
   padding: 0px 6px;
+  margin-left: 10px;
+}
+
+.btn.btn-danger.sm-btn {
+  height: 25px;
+  padding: 0px 9px;
+  margin-top: 2px;
+  margin-left: 138px;
 }
 
 /* Displaying Errors */
