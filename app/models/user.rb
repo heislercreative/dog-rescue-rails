@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :events, through: :user_events
 
   has_secure_password
-  validates_presence_of :name, :email, :admin
+  validates_presence_of :name, :email
 
   def self.shelter_admin
     User.find(1)
