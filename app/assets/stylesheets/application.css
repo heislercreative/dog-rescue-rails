@@ -63,7 +63,7 @@ textarea {
   height: 200px;
 }
 
-.btn.btn-default {
+.btn.btn-default.sm-btn {
   height: 25px;
   padding: 0px 6px;
 }
