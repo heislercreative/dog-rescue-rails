@@ -14,4 +14,12 @@ class Event < ActiveRecord::Base
     self.users.sort_by{|e| e.name}.map{|e| e.name}
   end
 
+  def self.upcoming
+    Event.where("date >= ?", Date.current)
+  end
+
+  def self.past
+    Event.where("date < ?", Date.current)
+  end
+
 end
