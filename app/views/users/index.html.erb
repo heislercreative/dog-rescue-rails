@@ -14,7 +14,7 @@
         <%= f.submit 'Update', class: "btn btn-default sm-btn" %>
       <% end %>
       <%= form_tag user_path(user), method: "delete" do %>
-        <%= submit_tag "Delete", class: "btn btn-danger sm-btn", data: { confirm: "Are you sure you want to delete #{user.name}?"} %>
+        <%= submit_tag "Delete", class: "btn btn-danger sm-btn", data: { confirm: "Are you sure you want to delete #{user.name}? This will also delete the user's associated dogs."} %>
       <% end %>
     </li>
   <% end %>

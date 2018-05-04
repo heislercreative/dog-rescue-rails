@@ -40,6 +40,7 @@ class UsersController < ApplicationController
       @user.dogs.each{|d| d.destroy}
     end
     @user.destroy
+    flash[:notice] = "User successfully deleted."
     redirect_to users_path
   end
 
