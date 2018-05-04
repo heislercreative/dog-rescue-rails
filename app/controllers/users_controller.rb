@@ -30,9 +30,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(admin: user_params[:admin])
-    @users = User.where.not(id: 1).sort_by{|u| u.name}
     flash[:notice] = "Updated user admin status."
-    render :index
+    redirect_to users_path
   end
 
   private
