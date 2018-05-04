@@ -24,3 +24,4 @@ Models
   ToDo (once User model & login set up)
     [] 'Adopt' button (form)
     [] 'Attend' button (form)
+    [] New Dog, Edit Users for admin
