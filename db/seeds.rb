@@ -4,6 +4,7 @@
 
 
 admin_user = User.create(name: 'Admin', email: 'admin@railsdogrescue.com', password: 'testpw', admin: true)
+
 Breed.create([{name: 'Golden Retriever'}, {name: 'West Highland Terrier'}, {name: 'Yorkshire Terrier'}])
 
 admin_user.dogs.create([
@@ -13,6 +14,12 @@ admin_user.dogs.create([
 
   {name: 'Skye', age: 8, gender: 'Female', trained: false, fee: 175, description: 'Quiet, gentle, and loving.', breed_id: 2}
 ])
+
+User.create([
+  {name: 'Test Testerson', email: 'test@test.com', password: 'testpw1', admin: false},
+
+  {name: 'Cesar Milan', email: 'cesar@test.com', password: 'testpw2', admin: false}
+  ])
 
 Event.create(
   title: 'Cleanup Day', description: "Bring your least favorite clothes. We can promise it's going to be messy. Trust us.", date: "2018-05-04 00:00:00", start_time: "2018-05-04 13:00:00", end_time: "2018-05-04 15:30:00", organizer_id: 1
