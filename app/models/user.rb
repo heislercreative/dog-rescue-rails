@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   def self.shelter_admin
     User.find(1)
   end
+
+  def is_admin?
+    self.admin == true
+  end
 end

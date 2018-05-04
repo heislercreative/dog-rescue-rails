@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @users = User.all.sort_by{|u| u.name}
   end
 
   def show
@@ -25,6 +25,12 @@ class UsersController < ApplicationController
         render :new
       end
     end
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(admin: user_params[:admin])
+    redirect_to users_path
   end
 
   private

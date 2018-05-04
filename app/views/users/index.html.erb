@@ -1,1 +1,15 @@
+<h3>All Users</h3>
 
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <strong><%= user.name %></strong>
+      <%= form_for user do |f| %>
+        Admin: 
+        <%= f.radio_button :admin, true %> Yes
+        <%= f.radio_button :admin, false %> No
+        <%= f.submit 'Update', class: "btn btn-default" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

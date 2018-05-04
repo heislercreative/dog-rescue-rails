@@ -63,6 +63,11 @@ textarea {
   height: 200px;
 }
 
+.btn.btn-default {
+  height: 25px;
+  padding: 0px 6px;
+}
+
 /* Displaying Errors */
 .field_with_errors {
   display: inline-grid;
