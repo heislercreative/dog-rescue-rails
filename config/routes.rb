@@ -11,5 +11,9 @@ Rails.application.routes.draw do
 
   resources :dogs
   resources :breeds, only: [:show, :edit, :update, :destroy]
+
+  get 'login' => 'sessions#new'
+  post 'sessions' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
