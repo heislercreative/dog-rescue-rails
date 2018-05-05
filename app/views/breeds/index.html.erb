@@ -1,0 +1,9 @@
+<h3>All Breeds</h3>
+
+<ol>
+  <% @breeds.each do |breed| %>
+    <li>
+      <%= link_to breed.name, breed_path(breed) %> <%= "(#{breed.dogs.count} dogs)" %>
+    </li>
+  <% end %>
+</ol>

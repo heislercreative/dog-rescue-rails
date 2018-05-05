@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     if !logged_in?
       redirect_to login_path
     elsif !admin_logged_in?
-      redirect_to user_path
+      redirect_to user_path(current_user)
     end
   end
 

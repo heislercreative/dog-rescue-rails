@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show, :create, :update]
 
   resources :dogs
-  resources :breeds, only: [:show, :edit, :update, :destroy]
+  resources :breeds, only: [:index, :show, :edit, :update, :destroy]
 
   get 'login' => 'sessions#new'
   post 'sessions' => 'sessions#create'

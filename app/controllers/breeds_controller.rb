@@ -1,5 +1,9 @@
 class BreedsController < ApplicationController
-  before_action :admin_authentication_required, only: [:edit, :update, :destroy]
+  before_action :admin_authentication_required, only: [:index, :edit, :update, :destroy]
+
+  def index
+    @breeds = Breed.all.sort_by{|b| b.name}
+  end
 
   def show
     @breed = Breed.find(params[:id])
@@ -25,7 +29,7 @@ class BreedsController < ApplicationController
     @breed = Breed.find(params[:id])
     if @breed.dogs == []
       @breed.destroy
-      redirect_to user_path
+      redirect_to breeds_path
     else
       @dogs = @breed.dogs.where(user_id: User.shelter_admin.id)
       @adopted_dogs = @breed.dogs.where.not(user_id: User.shelter_admin.id)
