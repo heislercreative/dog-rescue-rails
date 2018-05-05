@@ -13,11 +13,13 @@
   <p><%= @dog.description %></p>
 </div>
 
-<!-- If current_user is admin display edit -->
-<%= link_to "Edit #{@dog.name}'s Details", edit_dog_path(@dog), class: "btn btn-warning" %>
-
-<!-- else dipslay Adopt -->
-<button type="button" class="btn btn-primary">Adopt <%= @dog.name %></button>
+<% if admin_logged_in? %>
+  <%= link_to "Edit #{@dog.name}'s Details", edit_dog_path(@dog), class: "btn btn-warning" %>
+<% elsif logged_in? && !admin_logged_in? %>
+  <%= button_to "Adopt #{@dog.name}", login_path, class: "btn btn-primary" %>
+<% else %>
+  <%= link_to "Log In to Adopt #{@dog.name}", login_path, method: 'get', class: "btn btn-primary" %>
+<% end %>
 
 <br><br><br>
 
