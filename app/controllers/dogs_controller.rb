@@ -2,7 +2,7 @@ class DogsController < ApplicationController
   before_action :get_breeds, only: [:new, :create, :edit, :update]
 
   def index
-    @dogs = User.shelter_admin.dogs
+    @dogs = User.shelter_admin.dogs.sort_by{|d| d.name}
   end
 
   def show
