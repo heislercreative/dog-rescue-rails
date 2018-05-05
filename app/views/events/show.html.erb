@@ -22,6 +22,12 @@
   <%= f.submit "Attend Event", class: "btn btn-primary" %>
 <% end %>
 
+<%= form_tag user_events_path(@unattend), method: "delete" do %>
+  <%= hidden_field_tag :user_id, current_user.id %>
+  <%= hidden_field_tag :event_id, @event.id %>
+  <%= submit_tag "Unattend Event", class: "btn btn-warning" %>
+<% end %>
+
 <br><br>
 
 <div class="description">

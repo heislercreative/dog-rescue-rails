@@ -12,6 +12,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @attend = UserEvent.new(event_id: @event.id)
+    @unattend = UserEvent.find_by(user_id: current_user.id, event_id: @event.id)
   end
 
   def new
