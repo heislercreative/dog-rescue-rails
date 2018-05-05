@@ -12,10 +12,10 @@
   <p><%= @event.description %></p>
 </div>
 
-<!-- If current_user is admin display edit -->
-<%= link_to "Edit Event", edit_user_event_path(@event), class: "btn btn-warning" %>
+<% if event_organizer %>
+  <%= link_to "Edit Event", edit_user_event_path(@event), class: "btn btn-warning" %>
+<% end %>
 
-<!-- else dipslay Attend -->
 <button type="button" class="btn btn-primary">Attend Event</button>
 
 <br><br>
