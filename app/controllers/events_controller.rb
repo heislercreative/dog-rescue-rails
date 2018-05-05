@@ -30,21 +30,33 @@ class EventsController < ApplicationController
   def edit
     @user = User.find_by(id: params[:user_id])
     @event = Event.find(params[:id])
+    if !event_organizer
+      redirect_to event_path(@event)
+    end
   end
 
   def update
     @event = Event.find(params[:id])
-    @event.update(event_params)
-    if @event.save
-      redirect_to event_path(@event)
+    if event_organizer
+      @event.update(event_params)
+      if @event.save
+        redirect_to event_path(@event)
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to event_path(@event)
     end
   end
 
   def destroy
-    Event.find(params[:id]).destroy
-    redirect_to events_path
+    @event = Event.find(params[:id])
+    if event_organizer
+      @event.destroy
+      redirect_to events_path
+    else
+      redirect_to event_path(@event)
+    end
   end
 
   private

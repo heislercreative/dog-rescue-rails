@@ -26,6 +26,10 @@ class ApplicationController < ActionController::Base
     logged_in? && current_user.is_admin?
   end
 
+  def event_organizer
+    current_user.name == @event.organizer
+  end
+
   helper_method :current_user
   helper_method :logged_in?
   helper_method :admin_logged_in?
