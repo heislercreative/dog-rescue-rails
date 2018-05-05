@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'events/past' => 'events#past'
   resources :events, only: [:index, :show, :create, :update]
+  resource :user_events, only: [:create, :destroy]
 
   resources :dogs
   resources :breeds, only: [:index, :show, :edit, :update, :destroy]

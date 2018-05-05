@@ -16,7 +16,11 @@
   <%= link_to "Edit Event", edit_user_event_path(@event), class: "btn btn-warning" %>
 <% end %>
 
-<button type="button" class="btn btn-primary">Attend Event</button>
+<%= form_for @attend do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :event_id, value: @event.id %>
+  <%= f.submit "Attend Event", class: "btn btn-primary" %>
+<% end %>
 
 <br><br>
 
