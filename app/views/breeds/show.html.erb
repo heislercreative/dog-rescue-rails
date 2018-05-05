@@ -8,6 +8,16 @@
 
 <%= render '/dogs/dog_list' %>
 
-<br><br>
+<hr>
+<% if admin_logged_in? %>
+  <h4>Adopted <%= @breed.name %>s</h4>
+  <ul>
+    <% @adopted_dogs.each do |dog| %>
+    <li><%= link_to dog.name, dog_path %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<br>
 
 <strong><%= link_to 'Return to All Dogs', dogs_path %></strong>

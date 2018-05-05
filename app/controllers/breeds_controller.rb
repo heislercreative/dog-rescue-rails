@@ -4,6 +4,7 @@ class BreedsController < ApplicationController
   def show
     @breed = Breed.find(params[:id])
     @dogs = @breed.dogs.where(user_id: User.shelter_admin.id)
+    @adopted_dogs = @breed.dogs.where.not(user_id: User.shelter_admin.id)
   end
 
   def edit
@@ -24,9 +25,10 @@ class BreedsController < ApplicationController
     @breed = Breed.find(params[:id])
     if @breed.dogs == []
       @breed.destroy
-      redirect_to breeds_path
+      redirect_to user_path
     else
       @dogs = @breed.dogs.where(user_id: User.shelter_admin.id)
+      @adopted_dogs = @breed.dogs.where.not(user_id: User.shelter_admin.id)
       flash[:notice] = "There are dogs associated with this breed. Please update or delete associated dogs before deleting the breed."
       render :show
     end
