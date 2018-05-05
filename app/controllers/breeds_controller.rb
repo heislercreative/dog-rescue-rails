@@ -1,5 +1,5 @@
 class BreedsController < ApplicationController
-  before_action :authentication_required, only: [:edit, :update, :destroy]
+  before_action :admin_authentication_required, only: [:edit, :update, :destroy]
 
   def show
     @breed = Breed.find(params[:id])
