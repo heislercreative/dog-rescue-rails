@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authentication_required
 
   def index
     @events = Event.upcoming
