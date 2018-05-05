@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :admin_authentication_required, only: [:new, :create, :edit, :update, :destroy]
+  before_action :admin_authentication_required, only: [:new, :create, :edit, :destroy]
   before_action :get_breeds, only: [:new, :create, :edit, :update]
 
   def index

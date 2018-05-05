@@ -16,7 +16,12 @@
 <% if admin_logged_in? %>
   <%= link_to "Edit #{@dog.name}'s Details", edit_dog_path(@dog), class: "btn btn-warning" %>
 <% elsif logged_in? && !admin_logged_in? %>
-  <%= button_to "Adopt #{@dog.name}", login_path, class: "btn btn-primary" %>
+
+  <%= form_for @dog do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit "Adopt #{@dog.name}", class: "btn btn-primary"%>
+  <% end %>
+
 <% else %>
   <%= link_to "Log In to Adopt #{@dog.name}", login_path, method: 'get', class: "btn btn-primary" %>
 <% end %>
