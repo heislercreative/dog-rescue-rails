@@ -15,7 +15,9 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_authentication_required
-    if !admin_logged_in?
+    if !logged_in?
+      redirect_to login_path
+    elsif !admin_logged_in?
       redirect_to user_path
     end
   end
