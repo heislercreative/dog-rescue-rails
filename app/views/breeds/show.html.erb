@@ -2,11 +2,12 @@
 
 <h3><%= @breed.name %>s</h3>
 
-<!-- If current_user is admin display edit -->
-<%= link_to "Edit Breed", edit_breed_path(@breed)%>
+<% if admin_logged_in? %>
+  <%= link_to "Edit Breed", edit_breed_path(@breed), class: "btn btn-warning"%>
+<% end %>
 
 <%= render '/dogs/dog_list' %>
 
-<br>
+<br><br>
 
 <strong><%= link_to 'Return to All Dogs', dogs_path %></strong>
