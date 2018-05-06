@@ -8,8 +8,9 @@ To start using the app, clone the repository, run `bundle` to install all necess
 
 To load demo content, run `rake db:seed` before viewing in the browser.
 
-- Sign up to create a new provider
-- Once logged in, providers can create and manage their patients.
+1. Visit the Sign Up page to create a new account or sign up with Facebook Omniauth.
+- The first user signed up will become the shelter admin (able to edit/delete other user accounts).
+2. Once logged in (through signup or login pages):
 - Each patient can have a list of conditions with details including diagnosis and treatment dates.
 - Both patients and their conditions can be edited and/or deleted.
 
