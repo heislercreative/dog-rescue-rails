@@ -1,13 +1,31 @@
 <h3>Welcome <%= @user.name %></h3>
 
 <br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <% if !@attending_events.empty? %>
+        <hr>
+        <h4>Events I'm Attending</h4>
+        <ul>
+          <% @attending_events.each do |event| %>
+          <li><%= link_to event.title, event %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <% if !@adopted_dogs.empty? %>
+        <hr>
+        <h4>My Adopted Dogs</h4>
+        <ul>
+          <% @adopted_dogs.each do |dog| %>
+          <li><%= link_to dog.name, dog %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
 
-<% if !@adopted_dogs.empty? %>
-  <hr>
-  <h4>My Adopted Dogs</h4>
-  <ul>
-    <% @adopted_dogs.each do |dog| %>
-    <li><%= link_to dog.name, dog_path(dog) %></li>
-    <% end %>
-  </ul>
-<% end %>
+    <div class="col-sm-4">
+
+    </div>
+  </div>
+</div>
