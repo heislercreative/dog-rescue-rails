@@ -1,12 +1,13 @@
 <% if event_organizer %>
   <%= link_to "Edit Event", edit_user_event_path(@event), class: "btn btn-warning" %>
+  <br><br>
 <% end %>
 
 <% if @unattend %>
   <%= form_tag user_events_path(@unattend), method: "delete" do %>
     <%= hidden_field_tag :user_id, current_user.id %>
     <%= hidden_field_tag :event_id, @event.id %>
-    <%= submit_tag "Unattend Event", class: "btn btn-warning" %>
+    <%= submit_tag "Unattend Event", class: "btn btn-danger" %>
   <% end %>
 <% else %>
   <%= form_for @attend do |f| %>
