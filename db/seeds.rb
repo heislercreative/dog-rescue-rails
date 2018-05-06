@@ -5,18 +5,20 @@
 
 admin_user = User.create(name: 'Admin', email: 'admin@railsdogrescue.com', password: 'testpw', admin: true)
 
-Breed.create([{name: 'Golden Retriever'}, {name: 'West Highland Terrier'}, {name: 'Yorkshire Terrier'}])
+Breed.create([{name: 'Golden Retriever'}, {name: 'Labrador Retriever'}, {name: 'Poodle'}, {name: 'Pit Bull'}, {name: 'Dachschund'}, {name: 'Maltese'}, {name: 'West Highland Terrier'}, {name: 'Yorkshire Terrier'}])
 
 admin_user.dogs.create([
   {name: 'Ranger', age: 10.5, gender: 'Male', trained: false, fee: 200, description: 'Still a puppy at heart, despite his size.', breed_id: 1},
 
   {name: 'Humphrey', age: 5, gender: 'Male', trained: true, fee: 250, description: 'Civilized, but beware of squirrels.', breed_id: 2},
 
+  {name: 'Slinky', age: 2, gender: 'Male', trained: true, fee: 150, description: 'A kind puppy with plenty of energy and room for fun.', breed_id: 2},
+
   {name: 'Skye', age: 8, gender: 'Female', trained: false, fee: 175, description: 'Quiet, gentle, and loving.', breed_id: 2}
 ])
 
 User.create([
-  {name: 'Test Testerson', email: 'test@test.com', password: 'testpw1', admin: false},
+  {name: 'John Testerson', email: 'jt@test.com', password: 'testpw1', admin: false},
 
   {name: 'Cesar Milan', email: 'cesar@test.com', password: 'testpw2', admin: false}
   ])
