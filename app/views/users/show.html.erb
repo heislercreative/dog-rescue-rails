@@ -1,1 +1,13 @@
+<h3>Welcome <%= @user.name %></h3>
 
+<br>
+
+<% if !@adopted_dogs.empty? %>
+  <hr>
+  <h4>My Adopted Dogs</h4>
+  <ul>
+    <% @adopted_dogs.each do |dog| %>
+    <li><%= link_to dog.name, dog_path(dog) %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     if logged_in?
       @user = User.find(current_user.id)
+      @adopted_dogs = Dog.where(user: current_user)
     else
       redirect_to dogs_path
     end
