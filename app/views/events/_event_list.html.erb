@@ -4,7 +4,7 @@
       <tr>
         <div class="info">
           <hr>
-          <h4><%= link_to event.title, event %></h4>
+          <h4><%= link_to event.title, user_event_path(event.organizer_id, event) %></h4>
           <em><%= event.date.strftime('%B %-d, %Y') %></em><br>
           <%= event.start_time.strftime('%l:%M %p') %> - <%= event.end_time.strftime('%l:%M %p') %>
         </div>
