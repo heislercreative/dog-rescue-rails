@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   def new
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     else
       @user = User.new(user_params)
       if @user.save
-        redirect_to user_path(@user)
+        redirect_to root_path
       else
         render :new
       end
