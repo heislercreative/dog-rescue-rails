@@ -8,8 +8,8 @@
 
 <%= render '/dogs/dog_list' %>
 
-<hr>
-<% if admin_logged_in? %>
+<% if admin_logged_in? && !@adopted_dogs.empty? %>
+  <hr>
   <h4>Adopted <%= @breed.name %>s</h4>
   <ul>
     <% @adopted_dogs.each do |dog| %>
