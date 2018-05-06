@@ -8,12 +8,22 @@ To start using the app, clone the repository, run `bundle` to install all necess
 
 To load demo content, run `rake db:seed` before viewing in the browser.
 
-### Test
-1. Visit the Sign Up page to create a new account or sign up with Facebook Omniauth.
+### Signup/Login
+- Visit the Sign Up page to create a new account or sign up with Facebook Omniauth.
 - The first user signed up will become the shelter admin (able to edit/delete other user accounts).
-2. Once logged in (through signup or login pages):
-- Each patient can have a list of conditions with details including diagnosis and treatment dates.
-- Both patients and their conditions can be edited and/or deleted.
+- If account already exists, visit the Log In page.
+
+### Shelter Admin
+- The shelter admin user (account 1) can edit users' admin statuses and delete users on the Users page.
+- All new dogs added to the system "belong to" the shelter admin account.
+
+### Other Admin
+- Once made an admin account by the shelter admin, these users can edit/delete adoptable dogs and breed information.
+
+### General Users
+- Registered users may view adoptable dogs and choose to adopt, transferring "ownership" from shelter admin.
+- All users can create/edit/delete events, as well as choose to attend or unattend them.
+- All users are presented with a home view to view their dogs and upcoming events.
 
 ## Contributing
 
