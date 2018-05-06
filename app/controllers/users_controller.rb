@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def show
     if logged_in?
       @user = User.find(current_user.id)
-      @adopted_dogs = Dog.where(user: current_user)
+      @dogs = Dog.where(user: current_user)
       @events = Event.upcoming
       @attending_events = @user.events.upcoming
     else

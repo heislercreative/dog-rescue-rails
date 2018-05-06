@@ -1,14 +1,18 @@
-<h3>Welcome <%= @user.name %></h3>
+<h3>Welcome <%= @user.name %></h3><br>
 
-<br>
+<% if admin_logged_in? %>
+  <%= link_to 'Add Dog', new_dog_path, class: 'btn btn-success' %>
+<% end %>
+<%= link_to 'New Event', new_user_event_path(@user), class: 'btn btn-primary' %><br>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-8">
-      <% if !@adopted_dogs.empty? %>
+      <% if !@dogs.empty? %>
         <hr>
-        <h4>My Adopted Dogs</h4>
+        <h4>Dogs</h4>
         <ul>
-          <% @adopted_dogs.each do |dog| %>
+          <% @dogs.each do |dog| %>
           <li><%= link_to dog.name, dog %></li>
           <% end %>
         </ul>
@@ -21,7 +25,6 @@
     </div>
 
     <div class="col-sm-4">
-      <%= link_to 'New Event', new_user_event_path(@user), class: 'btn btn-primary' %>
       <hr>
       <h4>Upcoming Events</h4>
       <%= render partial: 'events/event_list', locals: {events: @events} %>
