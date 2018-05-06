@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     if logged_in?
       @user = User.find(current_user.id)
       @adopted_dogs = Dog.where(user: current_user)
+      @events = Event.upcoming
       @attending_events = @user.events.upcoming
     else
       redirect_to dogs_path

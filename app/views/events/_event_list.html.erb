@@ -1,12 +1,12 @@
 <tbody>
-  <% @events.sort_by{|e| e.date}.each do |event| %>
+  <% events.sort_by{|e| e.date}.each do |event| %>
     <td class="list-item">
       <tr>
         <div class="info">
           <hr>
           <h4><%= link_to event.title, event %></h4>
-          <p><em><%= event.date.strftime('%B %-d, %Y') %></em></p>
-          <p><%= event.start_time.strftime('%l:%M %p') %> - <%= event.end_time.strftime('%l:%M %p') %></p>
+          <em><%= event.date.strftime('%B %-d, %Y') %></em><br>
+          <%= event.start_time.strftime('%l:%M %p') %> - <%= event.end_time.strftime('%l:%M %p') %>
         </div>
       </tr>
     </td>
