@@ -30,9 +30,14 @@ class ApplicationController < ActionController::Base
     current_user.name == @event.organizer
   end
 
+  def owner
+    current_user == @dog.user
+  end
+
   helper_method :current_user
   helper_method :logged_in?
   helper_method :admin_logged_in?
   helper_method :event_organizer
+  helper_method :owner
 
 end
