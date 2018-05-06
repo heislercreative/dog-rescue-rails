@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :shelter_admin_authentication_required, only: [:index]
 
   def index
     @users = User.where.not(id: 1).sort_by{|u| u.name}

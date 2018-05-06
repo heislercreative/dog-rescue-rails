@@ -18,12 +18,22 @@ class ApplicationController < ActionController::Base
     if !logged_in?
       redirect_to login_path
     elsif !admin_logged_in?
-      redirect_to user_path(current_user)
+      redirect_to root_path
     end
   end
 
   def admin_logged_in?
     logged_in? && current_user.is_admin?
+  end
+
+  def shelter_admin_authentication_required
+    if !shelter_admin_logged_in?
+      redirect_to root_path
+    end
+  end
+
+  def shelter_admin_logged_in?
+    logged_in? && current_user == User.shelter_admin
   end
 
   def event_organizer
@@ -37,6 +47,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :logged_in?
   helper_method :admin_logged_in?
+  helper_method :shelter_admin_logged_in?
   helper_method :event_organizer
   helper_method :owner
 
