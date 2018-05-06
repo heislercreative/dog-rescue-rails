@@ -15,11 +15,11 @@ class Event < ActiveRecord::Base
   end
 
   def self.upcoming
-    Event.where("date >= ?", Date.current)
+    Event.where("date >= ?", Date.current).sort_by{|e| e.date}
   end
 
   def self.past
-    Event.where("date < ?", Date.current)
+    Event.where("date < ?", Date.current).sort_by{|e| e.date}.reverse!
   end
 
 end

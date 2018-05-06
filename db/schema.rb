@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2018_04_25_033957) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.string "image"
     t.string "uid"
     t.boolean "admin"
     t.datetime "created_at", null: false

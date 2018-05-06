@@ -13,7 +13,7 @@
         <h4>Dogs</h4>
         <ul>
           <% @dogs.each do |dog| %>
-          <li><%= link_to dog.name, dog %></li>
+          <li><%= link_to dog.name, dog %> - <%= dog.breed_name %></li>
           <% end %>
         </ul>
       <% end %>
