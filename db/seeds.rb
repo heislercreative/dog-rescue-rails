@@ -23,9 +23,8 @@ User.create([
   {name: 'Cesar Milan', email: 'cesar@test.com', password: 'testpw2', admin: false}
   ])
 
-Event.create(
-  title: 'Cleanup Day', description: "Bring your least favorite clothes. We can promise it's going to be messy. Trust us.", date: "2018-05-04 00:00:00", start_time: "2018-05-04 13:00:00", end_time: "2018-05-04 15:30:00", organizer_id: 1
-)
-Event.create(
-  title: 'Preparing for Y2K', description: "Help us stock up on canned goods and apocalypse food buckets. One can never be too prepared.", date: "1999-12-30 00:00:00", start_time: "1999-12-30 12:00:00", end_time: "1999-12-30 16:00:00", organizer_id: 1
-)
+Event.create([
+  {title: 'Cleanup Day', description: "Bring your least favorite clothes. We can promise it's going to be messy. Trust us.", date: "2018-06-27 00:00:00", start_time: "2018-06-27 13:00:00", end_time: "2018-06-27 15:30:00", organizer_id: 1},
+
+  {title: 'Preparing for Y2K', description: "Help us stock up on canned goods and apocalypse food buckets. One can never be too prepared.", date: "1999-12-30 00:00:00", start_time: "1999-12-30 12:00:00", end_time: "1999-12-30 16:00:00", organizer_id: 1}
+])

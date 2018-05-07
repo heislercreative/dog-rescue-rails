@@ -23,7 +23,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to event_path(@event)
+      redirect_to user_event_path(@event.organizer_id, @event)
     else
       render :new
     end
@@ -33,7 +33,7 @@ class EventsController < ApplicationController
     @user = User.find_by(id: params[:user_id])
     @event = Event.find(params[:id])
     if !event_organizer
-      redirect_to event_path(@event)
+      redirect_to event_path(@event.organizer_id, @event)
     end
   end
 
@@ -42,12 +42,12 @@ class EventsController < ApplicationController
     if event_organizer
       @event.update(event_params)
       if @event.save
-        redirect_to event_path(@event)
+        redirect_to user_event_path(@event.organizer_id, @event)
       else
         render :edit
       end
     else
-      redirect_to event_path(@event)
+      redirect_to user_event_path(@event.organizer_id, @event)
     end
   end
 

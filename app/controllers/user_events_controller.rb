@@ -1,16 +1,18 @@
 class UserEventsController < ApplicationController
   def create
     @user_event = UserEvent.create(user_event_params)
+    @user = User.find(@user_event.user_id)
     @event = Event.find(@user_event.event_id)
-    redirect_to event_path(@event)
+    redirect_to user_event_path(@user, @event)
   end
 
 
   def destroy
     @user_event = UserEvent.find_by(user_id: params[:user_id], event_id: params[:event_id])
+    @user = User.find(@user_event.user_id)
     @event = Event.find(@user_event.event_id)
     @user_event.destroy
-    redirect_to event_path(@event)
+    redirect_to user_event_path(@user, @event)
   end
 
   private
