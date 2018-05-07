@@ -27,6 +27,9 @@ class UsersController < ApplicationController
       render :new
     else
       @user = User.new(user_params)
+      if User.all.empty?
+        @user.admin = true
+      end
       if @user.save
         session[:user_id] = @user.id
         redirect_to root_path
