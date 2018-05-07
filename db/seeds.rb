@@ -10,11 +10,11 @@ Breed.create([{name: 'Golden Retriever'}, {name: 'Labrador Retriever'}, {name: '
 admin_user.dogs.create([
   {name: 'Ranger', age: 10.5, gender: 'Male', trained: false, fee: 200, description: 'Still a puppy at heart, despite his size.', breed_id: 1},
 
-  {name: 'Humphrey', age: 5, gender: 'Male', trained: true, fee: 250, description: 'Civilized, but beware of squirrels.', breed_id: 2},
+  {name: 'Humphrey', age: 5, gender: 'Male', trained: true, fee: 250, description: 'Civilized, but beware of squirrels.', breed_id: 7},
 
-  {name: 'Slinky', age: 2, gender: 'Male', trained: true, fee: 150, description: 'A kind puppy with plenty of energy and room for fun.', breed_id: 2},
+  {name: 'Slinky', age: 2, gender: 'Male', trained: true, fee: 150, description: 'A kind puppy with plenty of energy and room for fun.', breed_id: 5},
 
-  {name: 'Skye', age: 8, gender: 'Female', trained: false, fee: 175, description: 'Quiet, gentle, and loving.', breed_id: 2}
+  {name: 'Skye', age: 8, gender: 'Female', trained: false, fee: 175, description: 'Quiet, gentle, and loving.', breed_id: 7}
 ])
 
 User.create([

@@ -5,7 +5,7 @@ Specs:
 - [x] Include at least one has_many relationship (Breed has_many Dogs, User has_many Dogs)
 - [x] Include at least one belongs_to relationship (Dog belongs_to User and Breed)
 - [x] Include at least one has_many through relationship (Event has_many Users through UsersEvents & vice-versa)
-- [ ] The "through" part of the has_many through includes at least one user submittable attribute (User, as organizer, submits all Event attributes, i.e. title, date, time, description)
+- [x] The "through" part of the has_many through includes at least one user submittable attribute (User, as organizer, submits all Event attributes, i.e. title, date, time, description)
 - [x] Include reasonable validations for simple model objects (validations for all models except UserEvent)
 - [x] Include a class level ActiveRecord scope method (Event 'past' class method - /event/past)
 - [x] Include signup (through users#create)
