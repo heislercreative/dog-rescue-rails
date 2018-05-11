@@ -1,0 +1,7 @@
+<h3>Most Popular Breed - <%= @breed.name %></h3>
+
+<ul>
+  <% @breed.dogs.each do |dog| %>
+  <li><%= link_to dog.name, dog_path(dog) %></li>
+  <% end %>
+</ul>

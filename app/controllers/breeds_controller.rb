@@ -5,6 +5,10 @@ class BreedsController < ApplicationController
     @breeds = Breed.all.sort_by{|b| b.name}
   end
 
+  def most_popular
+    @breed = Breed.most_popular
+  end
+
   def show
     @breed = Breed.find(params[:id])
     @dogs = @breed.dogs.where(user_id: User.shelter_admin.id)

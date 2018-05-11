@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resource :user_events, only: [:create, :destroy]
 
   resources :dogs
+  get 'breeds/most_popular' => 'breeds#most_popular'
   resources :breeds, only: [:index, :show, :edit, :update, :destroy]
 
   get 'login' => 'sessions#new'
