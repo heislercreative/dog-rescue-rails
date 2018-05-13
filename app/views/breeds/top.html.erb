@@ -2,8 +2,15 @@
 
 <h4>#<%= @rank %>: <%= @breed.name %></h4>
 
-<ul>
-  <% @breed.dogs.each do |dog| %>
-  <li><%= link_to dog.name, dog_path(dog) %></li>
-  <% end %>
-</ul>
+<% if @breed.dogs.nil? %>
+  <%= "We have not received any dogs from this breed yet!" %>
+<% else %>
+  <ul>
+    <% @dogs.each do |dog| %>
+      <li><%= link_to dog.name, dog_path(dog) %></li>
+    <% end %>
+    <% @adopted_dogs.each do |dog| %>
+      <li><%= dog.name %> (Adopted)</li>
+    <% end %>
+  </ul>
+<% end %>

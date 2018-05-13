@@ -8,6 +8,8 @@ class BreedsController < ApplicationController
   def top
     @rank = params[:rank].to_i
     @breed = Breed.top(@rank)
+    @dogs = @breed.dogs.where(user_id: User.shelter_admin.id)
+    @adopted_dogs = @breed.dogs.where.not(user_id: User.shelter_admin.id)
   end
 
   def show
