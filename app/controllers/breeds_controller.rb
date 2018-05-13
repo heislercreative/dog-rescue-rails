@@ -5,8 +5,9 @@ class BreedsController < ApplicationController
     @breeds = Breed.all.sort_by{|b| b.name}
   end
 
-  def most_popular
-    @breed = Breed.most_popular
+  def top
+    @rank = params[:rank].to_i
+    @breed = Breed.top(@rank)
   end
 
   def show

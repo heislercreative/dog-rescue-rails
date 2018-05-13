@@ -1,4 +1,6 @@
-<h3>Most Popular Breed - <%= @breed.name %></h3>
+<h3>Top Breeds</h3><br>
+
+<h4>#<%= @rank %>: <%= @breed.name %></h4>
 
 <ul>
   <% @breed.dogs.each do |dog| %>
