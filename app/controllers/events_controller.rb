@@ -2,7 +2,12 @@ class EventsController < ApplicationController
   before_action :authentication_required
 
   def index
-    @events = Event.upcoming
+    if params[:user_id]
+      @user = User.find_by(id: params[:user_id])
+      @events = @user.events.upcoming
+    else
+      @events = Event.upcoming
+    end
   end
 
   def past

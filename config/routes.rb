@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
 
   resources :users, only:[:index, :show, :create, :update, :destroy] do
-    resources :events, only: [:new, :show, :edit, :destroy]
+    resources :events, only: [:index, :new, :show, :edit, :destroy]
   end
 
   get 'events/past' => 'events#past'
