@@ -10,6 +10,7 @@ $(function() {
             $(`.attending-list-${eventId}`).append(`<li>${user.name}</li>`)
           )
         }
+        $(`button[data-id="${eventId}"]`).addClass("hidden")
       })
     })
   })
