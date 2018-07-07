@@ -2,8 +2,8 @@
 
 <br>
 <div class="info">
-  <h4><em><%= link_to @dog.breed.name, @dog.breed %></em></h4>
-  <h5><%= @dog.gender %> - <%= @dog.age %> years old</h5>
+  <h4><em class="breed-name"><%= link_to @dog.breed.name, @dog.breed %></em></h4>
+  <h5><span class="gender-age"><%= @dog.gender %> - <%= @dog.age %></span> years old</h5>
   <h5><%= is_trained?(@dog) %></h5>
   <h5>Adoption Fee: $<%= @dog.fee %></h5>
 </div>
@@ -26,8 +26,14 @@
 
 <script type="text/javascript">
   $(function() {
-    $(".next-dog").on("click", function() {
-        console.log("clicked!")
+    $(".next-dog").on("click", function(e) {
+      e.preventDefault()
+      let nextId = parseInt($(".next-dog").attr("data-id")) + 1
+      $.getJSON(`/dogs/${nextId}`, function(dog) {
+        $(".header-name").text(dog.name)
+        $(".breed-name").html(`<a href="/breeds/${dog.breed.id}">${dog.breed.name}</a>`)
+        $(".gender-age").text(`${dog.gender} - ${dog.age}`)
+      })
     })
   })
 </script>
