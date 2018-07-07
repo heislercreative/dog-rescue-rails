@@ -41,7 +41,7 @@ class DogsController < ApplicationController
     @dog = Dog.find(params[:id])
     @dog.update(dog_params)
     if @dog.save
-      redirect_to dog_path(@dog)
+      redirect_to root_path
     else
       render :edit
     end

@@ -6,10 +6,14 @@
 <% elsif logged_in? && !admin_logged_in? && !owner %>
   <%= form_for @dog do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.submit "Adopt #{@dog.name}", class: "btn btn-primary adopt-bn"%>
+    <%= f.button type: "submit", class: "btn btn-primary adopt-bn" do%>
+      Adopt <span class="dog-name"><%= @dog.name %></span>
+    <% end %>
     <br><br><br>
   <% end %>
 <% elsif !owner %>
-  <%= link_to "Log In to Adopt #{@dog.name}", login_path, method: 'get', class: "btn btn-primary login-btn" %>
+  <%= link_to login_path, method: 'get', class: "btn btn-primary login-btn" do %>
+    Log In to Adopt <span class="dog-name"><%= @dog.name %></span>
+  <% end %>
   <br><br><br>
 <% end %>

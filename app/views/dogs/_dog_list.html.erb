@@ -7,7 +7,7 @@
           <h4><%= link_to dog.name, dog %></h4>
           <p><em><%= link_to dog.breed.name, dog.breed %></em></p>
           <p><%= dog.gender %> - <%= dog.age %> years old</p>
-          <p><%= is_trained?(dog) %></p>
+          <p>Potty Trained: <%= is_trained?(dog) %></p>
         </div>
       </tr>
     </td>

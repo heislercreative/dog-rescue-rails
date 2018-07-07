@@ -28,7 +28,8 @@
   $(function() {
     $(".next-dog").on("click", function(e) {
       e.preventDefault()
-      let nextId = parseInt($(".next-dog").attr("data-id")) + 1
+      let currentId = parseInt($(".next-dog").attr("data-id"))
+      let nextId = currentId + 1
       $.getJSON(`/dogs/${nextId}`, function(dog) {
         $(".dog-name").text(dog.name)
         $(".breed-name").html(`<a href="/breeds/${dog.breed.id}">${dog.breed.name}</a>`)
@@ -42,6 +43,8 @@
         $(".dog-description").text(dog.description)
 
         $(".edit-btn").attr("href", `/dogs/${dog.id}/edit`)
+        $(`#edit_dog_${currentId}`).attr("action", `/dogs/${nextId}`)
+        $(`#edit_dog_${currentId}`).attr("id", `#edit_dog_${nextId}`)
 
         $(".next-dog").attr("data-id", dog.id)
       })
