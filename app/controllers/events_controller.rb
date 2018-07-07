@@ -18,6 +18,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @attend = UserEvent.new(event_id: @event.id)
     @unattend = UserEvent.find_by(user_id: current_user.id, event_id: @event.id)
+
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @event }
+    end
   end
 
   def new
