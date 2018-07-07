@@ -1,16 +1,16 @@
-<h3 class="header-name"><%= @dog.name %></h3>
+<h3 class="dog-name"><%= @dog.name %></h3>
 
 <br>
 <div class="info">
   <h4><em class="breed-name"><%= link_to @dog.breed.name, @dog.breed %></em></h4>
   <h5><span class="gender-age"><%= @dog.gender %> - <%= @dog.age %></span> years old</h5>
-  <h5><%= is_trained?(@dog) %></h5>
-  <h5>Adoption Fee: $<%= @dog.fee %></h5>
+  <h5>Potty & Create Trained: <span class="trained-yn"><%= is_trained?(@dog) %></span></h5>
+  <h5>Adoption Fee: $<span class="fee"><%= @dog.fee %></span></h5>
 </div>
 <br>
 <div class="description">
-  <h4>About <%= @dog.name %>:</h4>
-  <p><%= @dog.description %></p>
+  <h4>About <span class="dog-name"><%= @dog.name %></span>:</h4>
+  <p><span class="dog-description"><%= @dog.description %></span></p>
 </div>
 
 <%= render 'edit_or_adopt' %>
@@ -30,9 +30,18 @@
       e.preventDefault()
       let nextId = parseInt($(".next-dog").attr("data-id")) + 1
       $.getJSON(`/dogs/${nextId}`, function(dog) {
-        $(".header-name").text(dog.name)
+        $(".dog-name").text(dog.name)
         $(".breed-name").html(`<a href="/breeds/${dog.breed.id}">${dog.breed.name}</a>`)
         $(".gender-age").text(`${dog.gender} - ${dog.age}`)
+        if (dog.trained) {
+          $(".trained-yn").text("Yes")
+        } else {
+          $(".trained-yn").text("No")
+        }
+        $(".fee").text(dog.fee)
+        $(".dog-description").text(dog.description)
+
+        $(".next-dog").attr("data-id", dog.id)
       })
     })
   })

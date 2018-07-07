@@ -2,9 +2,9 @@ module DogHelper
 
   def is_trained?(dog)
     if dog.trained
-      "Potty & Crate Trained: Yes"
+      "Yes"
     else
-      "Potty & Crate Trained: No"
+      "No"
     end
   end
 
