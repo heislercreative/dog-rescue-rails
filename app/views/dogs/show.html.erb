@@ -41,6 +41,8 @@
         $(".fee").text(dog.fee)
         $(".dog-description").text(dog.description)
 
+        $(".edit-btn").attr("href", `/dogs/${dog.id}/edit`)
+
         $(".next-dog").attr("data-id", dog.id)
       })
     })
