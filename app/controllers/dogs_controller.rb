@@ -12,7 +12,10 @@ class DogsController < ApplicationController
 
   def show
     @dog = Dog.find(params[:id])
-    render json: @dog
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @dog }
+    end
   end
 
   def new

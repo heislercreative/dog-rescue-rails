@@ -1,4 +1,4 @@
-<h3><%= @dog.name %></h3>
+<h3 class="header-name"><%= @dog.name %></h3>
 
 <br>
 <div class="info">
@@ -15,8 +15,20 @@
 
 <%= render 'edit_or_adopt' %>
 
+<strong><a href="#" class="next-dog" data-id="<%= @dog.id %>">Next Dog</a>
+</strong><br><br>
+
 <% if @dog.user == current_user %>
   <strong><%= link_to 'Return Home', root_path %></strong>
 <% else %>
   <strong><%= link_to 'Return to All Dogs', dogs_path %></strong>
 <% end %>
+
+<script type="text/javascript" charset="ut
+">
+  $(function() {
+    $(".next-dog").on("click", function() {
+        console.log("clicked!")
+    })
+  })
+</script>
