@@ -12,6 +12,7 @@ class DogsController < ApplicationController
 
   def show
     @dog = Dog.find(params[:id])
+    render json: @dog
   end
 
   def new
