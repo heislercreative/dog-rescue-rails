@@ -53,7 +53,8 @@ class EventsController < ApplicationController
     if event_organizer
       @event.update(event_params)
       if @event.save
-        redirect_to user_event_path(@event.organizer_id, @event)
+        render json: @event, status: 201
+        # redirect_to user_event_path(@event.organizer_id, @event)
       else
         render :edit
       end

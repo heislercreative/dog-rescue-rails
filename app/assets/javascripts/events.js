@@ -32,11 +32,21 @@ Event.prototype.renderMore = function() {
 }
 
 $(function() {
-  $('form').submit(function(e) {
+  $('.new_event').submit(function(e) {
     e.preventDefault()
 
     let values = $(this).serialize()
     let posting = $.post('/events', values)
+    posting.done(function(resp) {
+      let event = new Event(resp)
+      event.renderNew()
+    })
+  })
+
+  $('.edit_event').submit(function(e) {
+    e.preventDefault()
+    let values = $(this).serialize()
+    let posting = $.ajax('/events', values)
     posting.done(function(resp) {
       let event = new Event(resp)
       event.renderNew()
