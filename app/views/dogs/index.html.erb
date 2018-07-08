@@ -1,3 +1,7 @@
-<h3>Dogs Available for Adoption</h3>
+<h3>Dogs Available for Adoption</h3><br>
+
+<% if admin_logged_in? %>
+  <%= link_to 'Add Dog', new_dog_path, class: 'btn btn-success' %>
+<% end %><br>
 
 <%= render 'dog_list' %>

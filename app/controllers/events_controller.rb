@@ -6,6 +6,7 @@ class EventsController < ApplicationController
       @user = User.find_by(id: params[:user_id])
       @events = @user.events.upcoming
     else
+      @user = User.find_by(id: current_user.id)
       @events = Event.upcoming
     end
   end
