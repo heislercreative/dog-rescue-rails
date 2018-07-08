@@ -32,26 +32,24 @@ Event.prototype.renderMore = function() {
 }
 
 $(function() {
-  $('.new_event').submit(function(e) {
+
+  postEvent = function(e, data) {
     e.preventDefault()
-    let values = $(this).serialize()
-    let action = $(this).attr("action")
+    let values = $(data).serialize()
+    let action = $(data).attr("action")
     let posting = $.post(action, values)
     posting.done(function(resp) {
       let event = new Event(resp)
       event.renderNew()
     })
+  }
+
+  $('.new_event').submit(function(e) {
+    postEvent(e, this)
   })
 
   $('.edit_event').submit(function(e) {
-    e.preventDefault()
-    let values = $(this).serialize()
-    let action = $(this).attr("action")
-    let posting = $.post(action, values)
-    posting.done(function(resp) {
-      let event = new Event(resp)
-      event.renderNew()
-    })
+    postEvent(e, this)
   })
 
   $(".event-more").on("click", function() {
