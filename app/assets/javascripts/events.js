@@ -34,9 +34,9 @@ Event.prototype.renderMore = function() {
 $(function() {
   $('.new_event').submit(function(e) {
     e.preventDefault()
-
     let values = $(this).serialize()
-    let posting = $.post('/events', values)
+    let action = $(this).attr("action")
+    let posting = $.post(action, values)
     posting.done(function(resp) {
       let event = new Event(resp)
       event.renderNew()
@@ -46,7 +46,8 @@ $(function() {
   $('.edit_event').submit(function(e) {
     e.preventDefault()
     let values = $(this).serialize()
-    let posting = $.ajax('/events', values)
+    let action = $(this).attr("action")
+    let posting = $.post(action, values)
     posting.done(function(resp) {
       let event = new Event(resp)
       event.renderNew()
