@@ -1,3 +1,17 @@
 <h3>Create a New Event</h3><br>
 
 <%= render 'form' %>
+
+<h3 id="eventTitle"></h3>
+<div class="hidden">
+  <div class="info">
+    <h4 id="eventDate"></h4>
+    <h5><span id="eventStart"></span> - <span id="eventEnd"></span></h5>
+  </div>
+  <div class="description">
+    <h4>About the Event:</h4>
+    <p id="eventDescription"></p>
+  </div>
+</div>
+
+<%= javascript_include_tag "events" %>

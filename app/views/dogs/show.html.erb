@@ -24,30 +24,4 @@
   <strong><%= link_to 'Return to All Dogs', dogs_path %></strong>
 <% end %>
 
-<script type="text/javascript">
-  $(function() {
-    $(".next-dog").on("click", function(e) {
-      e.preventDefault()
-      let currentId = parseInt($(".next-dog").attr("data-id"))
-      let nextId = currentId + 1
-      $.getJSON(`/dogs/${nextId}`, function(dog) {
-        $(".dog-name").text(dog.name)
-        $(".breed-name").html(`<a href="/breeds/${dog.breed.id}">${dog.breed.name}</a>`)
-        $(".gender-age").text(`${dog.gender} - ${dog.age}`)
-        if (dog.trained) {
-          $(".trained-yn").text("Yes")
-        } else {
-          $(".trained-yn").text("No")
-        }
-        $(".fee").text(dog.fee)
-        $(".dog-description").text(dog.description)
-
-        $(".edit-btn").attr("href", `/dogs/${dog.id}/edit`)
-        $(`#edit_dog_${currentId}`).attr("action", `/dogs/${nextId}`)
-        $(`#edit_dog_${currentId}`).attr("id", `#edit_dog_${nextId}`)
-
-        $(".next-dog").attr("data-id", dog.id)
-      })
-    })
-  })
-</script>
+<%= javascript_include_tag "dogs" %>

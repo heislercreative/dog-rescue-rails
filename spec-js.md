@@ -8,9 +8,10 @@ Specs:
   - Event index resource uses jQuery to load additional information.
 - [x] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
   - Event JSON has many Users.
-- [ ] Use your Rails API and a form to create a resource and render the response without a page refresh.
+- [x] Use your Rails API and a form to create a resource and render the response without a page refresh.
+  - Newly created event renders on the form page.
 - [ ] Translate JSON responses into js model objects.
-- [ ] At least one of the js model objects must have at least one method added by your code to the prototype.
+- [x] At least one of the js model objects must have at least one method added by your code to the prototype.
 
 Confirm
 - [ ] You have a large number of small Git commits
