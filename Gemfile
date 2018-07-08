@@ -29,6 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'active_model_serializers'
 gem 'jquery-rails'
 
+gem 'sprockets', '~> 3.7.2'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
