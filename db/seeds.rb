@@ -24,7 +24,12 @@ User.create([
   ])
 
 Event.create([
-  {title: 'Cleanup Day', description: "Bring your least favorite clothes. We can promise it's going to be messy. Trust us.", date: "2018-06-27 00:00:00", start_time: "2018-06-27 13:00:00", end_time: "2018-06-27 15:30:00", organizer_id: 1},
+
+  {title: 'Obedience Training 101', description: "Bring your adopted dog to this free 3-hour seminar on the basics of obedience training and positive reinforcment. Only for dogs adopted from our shelter.", date: "2018-07-21 00:00:00", start_time: "2018-07-21 9:00:00", end_time: "2018-07-21 12:00:00", organizer_id: 1},
+
+  {title: 'Adoption Fair', description: "Come get to meet our dogs in person, learn about our shelter, and enjoy summer refreshments. Same-day adoption available!", date: "2018-08-10 00:00:00", start_time: "2018-08-10 10:00:00", end_time: "2018-08-10 16:00:00", organizer_id: 1},
+
+  {title: 'Cleanup Day', description: "Bring your least favorite clothes. We can promise it's going to be messy. Trust us.", date: "2018-08-27 00:00:00", start_time: "2018-08-27 13:00:00", end_time: "2018-08-27 15:30:00", organizer_id: 1},
 
   {title: 'Preparing for Y2K', description: "Help us stock up on canned goods and apocalypse food buckets. One can never be too prepared.", date: "1999-12-30 00:00:00", start_time: "1999-12-30 12:00:00", end_time: "1999-12-30 16:00:00", organizer_id: 1}
 ])

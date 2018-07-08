@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'events/past' => 'events#past'
   resources :events, only: [:index, :create, :update]
 
+
   resources :dogs
   get 'breeds/top/:rank' => 'breeds#top'
   resources :breeds, only: [:index, :show, :edit, :update, :destroy]

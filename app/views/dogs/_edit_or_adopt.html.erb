@@ -1,13 +1,19 @@
 <% if admin_logged_in? %>
-  <%= link_to "Edit #{@dog.name}'s Details", edit_dog_path(@dog), class: "btn btn-warning" %>
+  <%= link_to edit_dog_path(@dog), class: "btn btn-warning edit-btn" do %>
+    Edit <span class="dog-name"><%= @dog.name %></span>'s Details
+  <% end %>
   <br><br><br>
 <% elsif logged_in? && !admin_logged_in? && !owner %>
   <%= form_for @dog do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.submit "Adopt #{@dog.name}", class: "btn btn-primary"%>
+    <%= f.button type: "submit", class: "btn btn-primary adopt-bn" do%>
+      Adopt <span class="dog-name"><%= @dog.name %></span>
+    <% end %>
     <br><br><br>
   <% end %>
 <% elsif !owner %>
-  <%= link_to "Log In to Adopt #{@dog.name}", login_path, method: 'get', class: "btn btn-primary" %>
+  <%= link_to login_path, method: 'get', class: "btn btn-primary login-btn" do %>
+    Log In to Adopt <span class="dog-name"><%= @dog.name %></span>
+  <% end %>
   <br><br><br>
 <% end %>

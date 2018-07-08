@@ -6,6 +6,7 @@ class EventsController < ApplicationController
       @user = User.find_by(id: params[:user_id])
       @events = @user.events.upcoming
     else
+      @user = User.find_by(id: current_user.id)
       @events = Event.upcoming
     end
   end
@@ -18,6 +19,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @attend = UserEvent.new(event_id: @event.id)
     @unattend = UserEvent.find_by(user_id: current_user.id, event_id: @event.id)
+
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @event }
+    end
   end
 
   def new
@@ -28,7 +34,8 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to user_event_path(@event.organizer_id, @event)
+      render json: @event, status: 201
+      # redirect_to user_event_path(@event.organizer_id, @event)
     else
       render :new
     end
@@ -47,7 +54,8 @@ class EventsController < ApplicationController
     if event_organizer
       @event.update(event_params)
       if @event.save
-        redirect_to user_event_path(@event.organizer_id, @event)
+        render json: @event, status: 201
+        # redirect_to user_event_path(@event.organizer_id, @event)
       else
         render :edit
       end

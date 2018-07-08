@@ -6,7 +6,15 @@
           <hr>
           <h4><%= link_to event.title, user_event_path(event.organizer_id, event) %></h4>
           <em><%= event.date.strftime('%B %-d, %Y') %></em><br>
-          <%= event.start_time.strftime('%l:%M %p') %> - <%= event.end_time.strftime('%l:%M %p') %>
+          <%= event.start_time.strftime('%l:%M %p') %> - <%= event.end_time.strftime('%l:%M %p') %><br><br>
+
+          <p class="event-description-<%= event.id %>"><%= truncate event.description, length: 60 %></p>
+          <div class="attending-div-<%= event.id %> hidden">
+            <strong>Attending:</strong><br>
+            <ul class="attending-list-<%= event.id %>"></ul>
+          </div>
+
+          <button class="btn btn-default event-more" data-id="<%= event.id %>" data-organizer="<%= event.organizer_id %>">More</button>
         </div>
       </tr>
     </td>

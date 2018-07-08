@@ -1,6 +1,10 @@
-<h3>Upcoming Events</h3>
+<h3>Upcoming Events</h3><br>
+
+<%= link_to 'New Event', new_user_event_path(@user), class: 'btn btn-primary' %><br>
 
 <%= render partial: 'event_list', locals: {events: @events} %>
 
 <hr>
 <%= link_to 'View Past Events', events_past_path %>
+
+<%= javascript_include_tag "events" %>

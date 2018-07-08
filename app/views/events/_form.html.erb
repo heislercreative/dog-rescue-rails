@@ -2,22 +2,36 @@
 
 <%= form_for @event do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %><br><br>
+  <%= f.text_field :title, required: true %><br><br>
 
   <%= f.label :date %>
-  <%= f.date_field :date, min: Date.today %><br><br>
+  <%= f.date_field :date, min: Date.today, required: true %><br><br>
 
   <%= f.label :start_time %>
-  <%= f.time_select :start_time, {start_hour: 8, end_hour: 21, ampm: true, minute_step: 30} %><br>
+  <%= f.time_select :start_time, {start_hour: 8, end_hour: 21, ampm: true, minute_step: 30}, required: true %><br>
 
   <%= f.label :end_time %>
-  <%= f.time_select :end_time, {start_hour: 8, end_hour: 21, ampm: true, minute_step: 30} %><br><br>
+  <%= f.time_select :end_time, {start_hour: 8, end_hour: 21, ampm: true, minute_step: 30}, required: true %><br><br>
 
   <%= f.label :description %><br>
-  <%= f.text_area :description %><br><br>
+  <%= f.text_area :description, required: true, minlength: 40 %><br><br>
 
   <%= f.hidden_field :organizer_id %>
 
   <%= f.submit class: "btn btn-warning" %>
 
 <% end %>
+
+<h3 id="eventTitle"></h3>
+<div class="hidden">
+  <div class="info">
+    <h4 id="eventDate"></h4>
+    <h5><span id="eventStart"></span> - <span id="eventEnd"></span></h5>
+  </div>
+  <div class="description">
+    <h4>About the Event:</h4>
+    <p id="eventDescription"></p>
+  </div>
+</div>
+
+<%= javascript_include_tag "events" %>

@@ -1,22 +1,27 @@
-<h3><%= @dog.name %></h3>
+<h3 class="dog-name"><%= @dog.name %></h3>
 
 <br>
 <div class="info">
-  <h4><em><%= link_to @dog.breed.name, @dog.breed %></em></h4>
-  <h5><%= @dog.gender %> - <%= @dog.age %> years old</h5>
-  <h5><%= is_trained?(@dog) %></h5>
-  <h5>Adoption Fee: $<%= @dog.fee %></h5>
+  <h4><em class="breed-name"><%= link_to @dog.breed.name, @dog.breed %></em></h4>
+  <h5><span class="gender-age"><%= @dog.gender %> - <%= @dog.age %></span> years old</h5>
+  <h5>Potty & Create Trained: <span class="trained-yn"><%= is_trained?(@dog) %></span></h5>
+  <h5>Adoption Fee: $<span class="fee"><%= @dog.fee %></span></h5>
 </div>
 <br>
 <div class="description">
-  <h4>About <%= @dog.name %>:</h4>
-  <p><%= @dog.description %></p>
+  <h4>About <span class="dog-name"><%= @dog.name %></span>:</h4>
+  <p><span class="dog-description"><%= @dog.description %></span></p>
 </div>
 
 <%= render 'edit_or_adopt' %>
+
+<strong><a href="#" class="next-dog" data-id="<%= @dog.id %>">Next Dog</a>
+</strong><br><br>
 
 <% if @dog.user == current_user %>
   <strong><%= link_to 'Return Home', root_path %></strong>
 <% else %>
   <strong><%= link_to 'Return to All Dogs', dogs_path %></strong>
 <% end %>
+
+<%= javascript_include_tag "dogs" %>
