@@ -3,6 +3,7 @@ class BreedsController < ApplicationController
 
   def index
     @breeds = Breed.all.sort_by{|b| b.name}
+    render json: @breeds, status: 200
   end
 
   def top
