@@ -21,5 +21,8 @@
     </ul>
   <% end %>
   <br>
+  <% if admin_logged_in? %>
+    <strong><%= link_to 'Return to All Breeds', breeds_path %></strong> •
+  <% end %>
   <strong><%= link_to 'Return to All Dogs', dogs_path %></strong>
 </div>

@@ -1,9 +1,5 @@
 <h3>All Breeds</h3>
 
-<ol>
-  <% @breeds.each do |breed| %>
-    <li>
-      <%= link_to breed.name, breed_path(breed) %> <%= "(#{breed.dogs.count})" %>
-    </li>
-  <% end %>
-</ol>
+<ol id="breedList"></ol>
+
+<%= javascript_include_tag "breeds" %>

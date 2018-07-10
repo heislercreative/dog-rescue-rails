@@ -3,6 +3,10 @@ class BreedsController < ApplicationController
 
   def index
     @breeds = Breed.all.sort_by{|b| b.name}
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @breeds }
+    end
   end
 
   def top
@@ -50,5 +54,4 @@ class BreedsController < ApplicationController
   def breed_params
     params.require(:breed).permit(:name)
   end
-
 end
