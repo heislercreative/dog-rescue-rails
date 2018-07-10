@@ -1,22 +1,26 @@
 <h3>All Breeds</h3>
 
-<ol>
-  <% @breeds.each do |breed| %>
-    <li>
-      <%= link_to breed.name, breed_path(breed) %> <%= "(#{breed.dogs.count})" %>
-    </li>
-  <% end %>
-</ol>
+<ol id="breedList"></ol>
 
 <script type="text/javascript">
   function Breed(attr) {
+    this.id = attr.id
     this.name = attr.name
     this.dogs = attr.dogs
   }
+
+  Breed.prototype.renderLi = function() {
+    $("#breedList").append(
+      `<li><a href="/breeds/${this.id}">${this.name} (${this.dogs.length})</a></li>`
+    )
+  }
+
+  $("#breedList").html("")
+
   fetch('/breeds.json', { credentials: "same-origin"})
     .then(resp => resp.json())
     .then(json => json.forEach(function(b) {
       let breed = new Breed(b)
-      console.log(breed.name, breed.dogs.length)
+      breed.renderLi()
     }))
 </script>
