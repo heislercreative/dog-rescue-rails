@@ -7,3 +7,16 @@
     </li>
   <% end %>
 </ol>
+
+<script type="text/javascript">
+  function Breed(attr) {
+    this.name = attr.name
+    this.dogs = attr.dogs
+  }
+  fetch('/breeds.json', { credentials: "same-origin"})
+    .then(resp => resp.json())
+    .then(json => json.forEach(function(b) {
+      let breed = new Breed(b)
+      console.log(breed.name, breed.dogs.length)
+    }))
+</script>
