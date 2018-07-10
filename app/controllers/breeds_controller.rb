@@ -51,5 +51,4 @@ class BreedsController < ApplicationController
   def breed_params
     params.require(:breed).permit(:name)
   end
-
 end
