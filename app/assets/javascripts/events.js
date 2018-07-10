@@ -11,13 +11,13 @@ function Event(attr) {
   this.users = attr.users
 }
 
-Event.prototype.renderEvent = function() {
+Event.prototype.renderNew = function() {
   $(".hidden").removeClass("hidden")
-  $(".eventTitle").text(this.title)
-  $(".eventDate").text(this.date)
-  $(".eventStart").text(this.startTime)
-  $(".eventEnd").text(this.endTime)
-  $(".eventDescription").text(this.description)
+  $("#eventTitle").text(this.title)
+  $("#eventDate").text(this.date)
+  $("#eventStart").text(this.startTime)
+  $("#eventEnd").text(this.endTime)
+  $("#eventDescription").text(this.description)
 }
 
 Event.prototype.renderMore = function() {
@@ -40,7 +40,7 @@ $(function() {
     let posting = $.post(action, values)
     posting.done(function(resp) {
       let event = new Event(resp)
-      event.renderEvent()
+      event.renderNew()
     })
   }
 
