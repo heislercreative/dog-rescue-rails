@@ -15,6 +15,6 @@ $("#breedList").html("")
 fetch('/breeds.json', { credentials: "same-origin"})
   .then(resp => resp.json())
   .then(json => json.forEach(function(b) {
-    let breed = new Breed(b)
+    const breed = new Breed(b)
     breed.renderLi()
   }))

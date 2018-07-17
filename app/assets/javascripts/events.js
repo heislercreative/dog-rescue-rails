@@ -33,13 +33,13 @@ Event.prototype.renderMore = function() {
 
 $(function() {
 
-  postEvent = function(e, data) {
+  const postEvent = function(e, data) {
     e.preventDefault()
-    let values = $(data).serialize()
-    let action = $(data).attr("action")
-    let posting = $.post(action, values)
+    const values = $(data).serialize()
+    const action = $(data).attr("action")
+    const posting = $.post(action, values)
     posting.done(function(resp) {
-      let event = new Event(resp)
+      const event = new Event(resp)
       event.renderNew()
     })
   }
@@ -53,10 +53,10 @@ $(function() {
   })
 
   $(".event-more").on("click", function() {
-    let eventId = $(this).data("id")
-    let organizerId = $(this).data("organizer")
+    const eventId = $(this).data("id")
+    const organizerId = $(this).data("organizer")
     $.getJSON(`/users/${organizerId}/events/${eventId}`, function(resp) {
-      let event = new Event(resp)
+      const event = new Event(resp)
       event.renderMore()
     })
   })
