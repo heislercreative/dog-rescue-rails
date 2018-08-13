@@ -1,4 +1,4 @@
-# Dog Rescue Shelter App
+# Dog Rescue Shelter
 
 This Rails app serves as an interface between shelter staff, volunteer workers, and prospective adopters. It allows admin staff to add adoptable dogs, users to adopt, and all users to create and attend shelter events.
 
