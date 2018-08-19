@@ -28,6 +28,7 @@ To load demo content, run `rake db:seed` before viewing in the browser.
 ## Blog
 
 [Part 1](https://heislercreative.github.io/dog_rescue_rails_mvc_project)
+
 [Part 2](https://heislercreative.github.io/dog_rescue_app_adding_jquery_to_the_front_end)
 
 ## Contributing
