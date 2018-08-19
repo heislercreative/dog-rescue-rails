@@ -25,6 +25,11 @@ To load demo content, run `rake db:seed` before viewing in the browser.
 - All users can create/edit/delete events, as well as choose to attend or unattend them.
 - All users are presented with a home view to view their dogs and upcoming events.
 
+## Blog
+
+[Part 1](https://heislercreative.github.io/dog_rescue_rails_mvc_project)
+[Part 2](https://heislercreative.github.io/dog_rescue_app_adding_jquery_to_the_front_end)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/heislercreative/dog-rescue-rails. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
