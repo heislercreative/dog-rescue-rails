@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    raise params.inspect
     if @user = User.find_by(email: user_params[:email])
       flash[:notice] = "Account already exists with this email. Please select a different email or sign in."
       render :new
