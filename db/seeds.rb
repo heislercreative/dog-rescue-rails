@@ -8,13 +8,22 @@ admin_user = User.create(name: 'Admin', email: 'admin@railsdogrescue.com', passw
 Breed.create([{name: 'Golden Retriever'}, {name: 'Labrador Retriever'}, {name: 'Poodle'}, {name: 'Pit Bull'}, {name: 'Dachschund'}, {name: 'Maltese'}, {name: 'West Highland Terrier'}, {name: 'Yorkshire Terrier'}])
 
 admin_user.dogs.create([
+  {name: 'Humphrey', age: 5, gender: 'Male', trained: true, fee: 250, description: 'Civilized, but beware of squirrels.', breed_id: 7},
+
   {name: 'Ranger', age: 10.5, gender: 'Male', trained: false, fee: 200, description: 'Still a puppy at heart, despite his size.', breed_id: 1},
 
-  {name: 'Humphrey', age: 5, gender: 'Male', trained: true, fee: 250, description: 'Civilized, but beware of squirrels.', breed_id: 7},
+  {name: 'Skye', age: 8, gender: 'Female', trained: false, fee: 175, description: 'Quiet, gentle, and loving.', breed_id: 7},
 
   {name: 'Slinky', age: 2, gender: 'Male', trained: true, fee: 150, description: 'A kind puppy with plenty of energy and room for fun.', breed_id: 5},
 
-  {name: 'Skye', age: 8, gender: 'Female', trained: false, fee: 175, description: 'Quiet, gentle, and loving.', breed_id: 7}
+  {name: 'Fluffy', age: 4.5, gender: 'Female', trained: true, fee: 275, description: 'Fancy and well-groomed.', breed_id: 3},
+
+  {name: 'Spark', age: 7, gender: 'Male', trained: false, fee: 200, description: 'Rambunctious but well-behaved.', breed_id: 8},
+
+  {name: 'Bella', age: 3, gender: 'Female', trained: true, fee: 225, description: 'Loves naps and evening walks.', breed_id: 6},
+
+  {name: 'Buddy', age: 6.5, gender: 'Male', trained: true, fee: 225, description: 'Loves to play; great at fetch.', breed_id: 1},
+
 ])
 
 User.create([
