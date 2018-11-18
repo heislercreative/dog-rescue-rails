@@ -49,6 +49,7 @@ gem 'pry'
 gem 'loofah', '>= 2.2.3'
 gem "rubyzip", ">= 1.2.2"
 gem "ffi", ">= 1.9.24"
+gem "rack", ">= 2.0.6"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
