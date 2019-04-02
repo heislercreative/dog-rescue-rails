@@ -76,6 +76,7 @@ end
 
 group :production do
   gem 'pg', '0.18.1'
+  gem 'database_cleaner'
   gem 'rails_12factor'
 end
 
